@@ -5,7 +5,7 @@ This is to add a middleware to [Gin framework](https://github.com/gin-gonic/gin)
 ## Usage
 
 ```go
-lm := limiter.NewRateLimiter(time.Minute, 10, func(ctx *gin.Context) (string, error) {
+lm := limiter.NewRateLimiter(time.Hour, 1000, func(ctx *gin.Context) (string, error) {
 		key := ctx.Request.Header.Get("X-API-KEY")
 		if key != "" {
 			return key, nil
@@ -15,7 +15,7 @@ lm := limiter.NewRateLimiter(time.Minute, 10, func(ctx *gin.Context) (string, er
 
 r.GET("/ping", lm.Middleware(), func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": "抽卡",
 		})
 	})
 ```
