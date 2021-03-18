@@ -13,7 +13,7 @@ lm := limiter.NewRateLimiter(time.Hour, 1000, func(ctx *gin.Context) (string, er
 		return "", errors.New("API key is missing")
 	})
 
-r.GET("/ping", lm.Middleware(), func(c *gin.Context) {
+r.GET("/D", lm.Middleware(), func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "抽卡",
 		})
