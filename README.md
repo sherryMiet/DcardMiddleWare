@@ -20,4 +20,4 @@ r.GET("/D", lm.Middleware(), func(c *gin.Context) {
 	})
 ```
 
-This means the URI "/ping" only allows 10 requests per minutes per X-API-KEY. The key can be not only header but also with your own rules. You can decide what you try to limit with by returning the key.For example, it's also ok to use cookie or client ip as the key. 
+This means the URI "/DrawCard" only allows 1000 requests per Hour per X-API-KEY. The key can be not only header but also with your own rules. You can decide what you try to limit with by returning the key.For example, it's also ok to use cookie or client ip as the key. 
